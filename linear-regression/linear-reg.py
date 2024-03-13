@@ -2,8 +2,8 @@
 
 import pandas as pd
 import matplotlib.pyplot as plt
-from createDataset import Set 
-from createDataset import DATASET_SIZE
+from create_data import Set 
+from create_data import DATASET_SIZE
 
 def error_gradient(m_now, b_now, data, learningRate):
     m_grad = 0
@@ -24,20 +24,22 @@ def error_gradient(m_now, b_now, data, learningRate):
     return m, b
 
 if __name__ == '__main__':
+    # Set()
     dataset = pd.read_csv('data.csv')
-    sete = Set()
     
     # y' = m * x + b
-    m = 0 # starting M
-    b = 0 # starting B
+    m = 94.64031056101999 # starting M
+    b = 0.14306927828237517 # starting B
     L = 0.000000001 # learning rate
-    epochs = 1000 # iterations
+    epochs = 10000 # iterations
 
     for i in range(epochs):
-        if i % 100 == 0: print(f"iteration: {i}")
+        if i % 100 == 0: 
+            print(f"iteration: {i}")
+            print(f"m: {m} b:{b}")
         m, b = error_gradient(m, b, dataset, L)
-    print(f"m: {m} b:{b}")
-
+    print(f"\nm: {m} b:{b}")
+    
     # while(True):
     #     try:
     #         ip = int(input("square meterage of home: "))

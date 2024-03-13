@@ -19,6 +19,6 @@ class Set:
             houseSize = random.uniform(50, 2000)
             price = (90*houseSize)*random.uniform(0.75, 1.5)
 
-            f.write( f'{houseSize:.2f},{price:.2f}\n' )
+            f.write( f'{math.ceil(houseSize)},{price:.2f}\n' )
         print('dataset created')
         f.close()
