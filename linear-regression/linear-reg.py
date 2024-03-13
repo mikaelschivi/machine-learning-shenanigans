@@ -24,12 +24,12 @@ def error_gradient(m_now, b_now, data, learningRate):
     return m, b
 
 if __name__ == '__main__':
-    # Set()
+    Set()
     dataset = pd.read_csv('data.csv')
     
     # y' = m * x + b
-    m = 94.64031056101999 # starting M
-    b = 0.14306927828237517 # starting B
+    m = 0 # starting M
+    b = 0 # starting B
     L = 0.000000001 # learning rate
     epochs = 10000 # iterations
 
